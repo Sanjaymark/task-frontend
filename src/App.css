@@ -1,43 +1,62 @@
 .App {
   text-align: center;
+  background-color: #61dafb;
+  display: flex;
+  flex-direction: column;
+}
+
+.member
+{
+    color: darkgrey;
+}
+
+.e
+{
+  color: darkgrey;
+}
+
+.result
+{
+  display: flex;
+  background-color: darkcyan;
 }
 
 .Card{
   border: 1px solid black;
-  width: 250px;
-  margin: 5px;
+  width: 30%;
+  height: 700px;
+  margin: 25px;
   border-radius: 10px;
+  font-stretch: normal;
+  text-align: left;
+  background-color:white;
 }
-
-.card-block{
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 12px;
-  
-}
-
-#btn 
+.ihead
 {
-  padding : 7px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.ibody
+{
+  padding-top: 10px;
+  padding-left: 25px;
+}
+  
+
+.button
+{
   margin : 5px;
   border:none;
-  border-radius: 10px;
-  font-size: larger;
+  border-radius: 20px;
+  font-size:medium;
+  width: 98%;
+  height: 50px;
+  background-color:darkcyan;
+  color: white;
 }
 
-.accept-btn
-{
-  background-color: greenyellow;
-}
-
-.reject-btn
-{
-  background-color: crimson;
-}
 
 .App-logo {
   height: 40vmin;

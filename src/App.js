@@ -4,88 +4,106 @@ import React, { useState } from 'react';
 
 function App() {
 
-  const [acceptCount, setAcceptCount] = useState(0);
-
-  const studentsData =[
-    {
-      name : "Sanjay",
-      batch : "B47",
-      education : "B.E",
-    },
-    {
-      name : "Rahul",
-      batch : "B45",
-      education : "B.Tech",
-    },
-    {
-      name : "Naveen",
-      batch : "B42",
-      education : "Bsc",
-    },
-    {
-      name : "Parthiban",
-      batch : "B41",
-      education : "B.com",
-    },
-  ]
   return (
-    <div className="App">
-      <div>
-        <h1>Accepted Students : {acceptCount}</h1>
-      </div>
-      <div className='card-block'>
-        {studentsData.map((stud,idx)=>
-          (
-            <StudentCard
-            key = {idx}
-            name = {stud.name}
-            batch = {stud.batch}
-            education = {stud.education}
-            acceptCount = {acceptCount}
-            setAcceptCount = {setAcceptCount}
-            />
-          ))
-        }
-          
-      </div>
-      
-    </div>
+    <Membership/>
   );
 }
 
 export default App;
 
-
-function StudentCard({name,batch,education,acceptCount,setAcceptCount})
+function FreeMembership()
 {
-  const [show, setShow] = useState(true)
-  function handleAccept()
-  {
-    setShow(!show)
-    setAcceptCount(acceptCount+1)
-  }
-
-  function handleReject()
-  {
-    setShow(!show)
-    setAcceptCount(acceptCount-1)
-  }
-  
   return(
     <div className="Card">
-      <img src='https://th.bing.com/th/id/OIP.Bi81yEfzzJtTz66IcC0lngHaHa?w=159&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'></img>
-      <h3>{name}</h3>
-      <p>{batch}</p>
-      <p>{education} </p>
-      {
-        show ?
-        <button className='accept-btn' id='btn' onClick={handleAccept}>Accept</button>
-        :
-        <button className='reject-btn' id='btn' onClick={handleReject}>Reject</button>
-      }
+      <div className='ihead'>
+            <h1 className='member'>FREE</h1>
+            <h1>$0<sub id='sub'>/month</sub></h1>
+      </div>
+            <hr></hr>
+      <div className='ibody'>
+            <h3> &#x2714; Single User</h3>
+            <h3> &#x2714; 5GB Storage</h3>
+            <h3> &#x2714; Unlimited Public Projects</h3>
+            <h3> &#x2714; Community Access</h3>
+            <h3 className='e'> &#x2718; Unlimited Private Projects</h3>
+            <h3 className='e'> &#x2718; Dedicated Phone Support</h3>
+            <h3 className='e'> &#x2718; Free Subdomain</h3>
+            <h3 className='e'> &#x2718; Monthly Status Reports</h3>
+      </div>
+      <br></br>
+      <div>
+            <button className='button'>BUTTON</button>
+      </div>
     </div>
   )
 }
 
+function PlusMembership()
+{
+  return(
+    <div className="Card">
+      <div className='ihead'>
+            <h1 className='member'>PLUS</h1>
+            <h1>$9<sub id='sub'>/month</sub></h1>
+      </div>
+            <hr></hr>
+      <div className='ibody'>
+            <h3> &#x2714; Single User</h3>
+            <h3> &#x2714; 5GB Storage</h3>
+            <h3> &#x2714; Unlimited Public Projects</h3>
+            <h3> &#x2714; Community Access</h3>
+            <h3> &#x2714; Unlimited Private Projects</h3>
+            <h3> &#x2714; Dedicated Phone Support</h3>
+            <h3> &#x2714; Free Subdomain</h3>
+            <h3 className='e'> &#x2718; Monthly Status Reports</h3>
+      </div>
+      <br></br>
+      <div>
+            <button className='button'>BUTTON</button>
+      </div>
+    </div>
+  )
+}
 
+function ProMembership()
+{
+  return(
+    <div className="Card">
+      <div className='ihead'>
+            <h1 className='member'>PRO</h1>
+            <h1>$49<sub id='sub'>/month</sub></h1>
+      </div>
+            <hr></hr>
+      <div className='ibody'>
+            <h3> &#x2714; Single User</h3>
+            <h3> &#x2714; 5GB Storage</h3>
+            <h3> &#x2714; Unlimited Public Projects</h3>
+            <h3> &#x2714; Community Access</h3>
+            <h3> &#x2714; Unlimited Private Projects</h3>
+            <h3> &#x2714; Dedicated Phone Support</h3>
+            <h3> &#x2714; Free Subdomain</h3>
+            <h3> &#x2714; Monthly Status Reports</h3>
+      </div>
+      <br></br>
+      <div>
+            <button className='button'>BUTTON</button>
+      </div>
+    </div>
+  )
+}
+
+function Membership()
+{
+  const free = FreeMembership();
+  const plus = PlusMembership();
+  const pro = ProMembership();
+  return(
+    <div className='result'>
+      {free}
+      {plus}
+      {pro}
+    </div>
+  )
+  
+}
 
