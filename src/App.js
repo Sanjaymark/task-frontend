@@ -1,109 +1,121 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, { useState } from 'react';
-
 function App() {
-
+const [acceptCount, setAcceptCount] = useState(0)
+  const studentsData = [
+    {
+      name:"Selvam",
+      batch:"B47WD",
+      education:"B.E",
+    },
+    {
+      name:"Sanjay",
+      batch:"B45WD",
+      education:"B.E",
+    },
+    {
+      name:"Baskar",
+      batch:"B43WD",
+      education:"BCA",
+    },
+    {
+      name:"Naveen",
+      batch:"B42WD",
+      education:"BSC",
+    },
+  ]
   return (
-    <Membership/>
+<div className="App">
+<div>
+  <h1>Accepted Students : {acceptCount}</h1>
+</div>
+<div className='card-block'>
+  {studentsData.map((stud,idx)=>(
+     <StudentCard
+     key={idx}
+     name={stud.name}
+     batch={stud.batch}
+     education={stud.education}
+     acceptCount={acceptCount}
+     setAcceptCount={setAcceptCount}
+     />
+  ))}
+</div>
+</div>
   );
 }
+// const props={} => 
+// props= {
+//   name:"",
+//    batch:"", 
+//    education:""}
+//destructuring 
+// const {name, batch, education} = props
 
 export default App;
 
-function FreeMembership()
-{
-  return(
-    <div className="Card">
-      <div className='ihead'>
-            <h1 className='member'>FREE</h1>
-            <h1>$0<sub id='sub'>/month</sub></h1>
-      </div>
-            <hr></hr>
-      <div className='ibody'>
-            <h3> &#x2714; Single User</h3>
-            <h3> &#x2714; 5GB Storage</h3>
-            <h3> &#x2714; Unlimited Public Projects</h3>
-            <h3> &#x2714; Community Access</h3>
-            <h3 className='e'> &#x2718; Unlimited Private Projects</h3>
-            <h3 className='e'> &#x2718; Dedicated Phone Support</h3>
-            <h3 className='e'> &#x2718; Free Subdomain</h3>
-            <h3 className='e'> &#x2718; Monthly Status Reports</h3>
-      </div>
-      <br></br>
-      <div>
-            <button className='button'>BUTTON</button>
-      </div>
+function StudentCard({name, batch, education, acceptCount, setAcceptCount}){
+  const [show, setShow] = useState(true)
+
+  function handleAccept(){
+    setShow(!show)
+    setAcceptCount(acceptCount+1)
+  }
+
+  function handleReject(){
+    setShow(!show)
+    setAcceptCount(acceptCount-1)
+    
+  }
+  return (
+    <div className='student-card'>
+      <img 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50haIo6IibH--JO8V4wJT_FGTLu3zECwg5EK_VQoT&s"
+       alt="name"/>
+      <h3>{name}</h3>
+      <p>{batch}</p>
+      <p>{education}</p>
+
+    {
+    show ?   <button 
+      className='accept-btn btn'
+      onClick={handleAccept}
+      >Accept</button> 
+      :    
+      <button 
+      className='reject-btn btn'
+      onClick={handleReject}
+      >Reject</button>
+    }
+      
+
     </div>
   )
 }
 
-function PlusMembership()
-{
-  return(
-    <div className="Card">
-      <div className='ihead'>
-            <h1 className='member'>PLUS</h1>
-            <h1>$9<sub id='sub'>/month</sub></h1>
-      </div>
-            <hr></hr>
-      <div className='ibody'>
-            <h3> &#x2714; Single User</h3>
-            <h3> &#x2714; 5GB Storage</h3>
-            <h3> &#x2714; Unlimited Public Projects</h3>
-            <h3> &#x2714; Community Access</h3>
-            <h3> &#x2714; Unlimited Private Projects</h3>
-            <h3> &#x2714; Dedicated Phone Support</h3>
-            <h3> &#x2714; Free Subdomain</h3>
-            <h3 className='e'> &#x2718; Monthly Status Reports</h3>
-      </div>
-      <br></br>
-      <div>
-            <button className='button'>BUTTON</button>
-      </div>
-    </div>
-  )
-}
 
-function ProMembership()
-{
-  return(
-    <div className="Card">
-      <div className='ihead'>
-            <h1 className='member'>PRO</h1>
-            <h1>$49<sub id='sub'>/month</sub></h1>
-      </div>
-            <hr></hr>
-      <div className='ibody'>
-            <h3> &#x2714; Single User</h3>
-            <h3> &#x2714; 5GB Storage</h3>
-            <h3> &#x2714; Unlimited Public Projects</h3>
-            <h3> &#x2714; Community Access</h3>
-            <h3> &#x2714; Unlimited Private Projects</h3>
-            <h3> &#x2714; Dedicated Phone Support</h3>
-            <h3> &#x2714; Free Subdomain</h3>
-            <h3> &#x2714; Monthly Status Reports</h3>
-      </div>
-      <br></br>
-      <div>
-            <button className='button'>BUTTON</button>
-      </div>
-    </div>
-  )
-}
 
-function Membership()
-{
-  const free = FreeMembership();
-  const plus = PlusMembership();
-  const pro = ProMembership();
-  return(
-    <div className='result'>
-      {free}
-      {plus}
-      {pro}
-    </div>
-  )
-  
-}
 
+// function Welcome(){
+//   const welcomename = "guvi"
+//   return(
+//     React.createElement("div", {id:"welcome"}, 
+//     React.createElement("h1", {}, `Hi how are you ${welcomename}`))
+//   )
+// }
+//jsx -> javascript xml = (html with js)
+
+// functional component
+// function Greeting(){
+//   //normal js
+//   //function
+//   //varible
+//   const name = "sanjay"
+
+//   return (
+//     <div id="greeting" className='greeting-class'>
+//       <h1>Hi how are you {name}</h1>
+//     </div>
+//   )
+// }
