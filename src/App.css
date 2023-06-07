@@ -3,9 +3,50 @@
 }
 .student-card{
   border: 1px solid black;
-  width : 250px;
+  width : 22%;
   margin: 5px;
   border-radius: 10px;
+}
+
+#image
+{
+  width: 99%;
+}
+.cart
+{
+  background-color:aliceblue;
+  height: 50px;
+  text-align: left;
+  padding-left: 100px;
+  
+}
+
+.Cart
+{
+  text-align:end;
+  padding-right: 50px;
+  padding-top: 15px;
+  font-size: large;
+}
+
+.Shop
+{
+  background-color: black;
+  height: 150px;
+  color: white;
+  font-size: 25px;
+  padding-top: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.SS
+{
+  font-size: 50px;
+}
+
+.ss{
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .card-block{
@@ -15,19 +56,29 @@
   align-items: center;
   flex-wrap: wrap;
   gap:0.5rem;
-  margin: 12px;
+  margin: 20px;
+}
+
+.copy
+{
+  background-color: black;
+  height: 150px;
+  color: white;
+  padding-top: 40px;
 }
 
 .btn {
   padding : 7px;
   margin : 5px;
   border:none;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: larger;
+  background-color: cadetblue;
 }
 .btn:hover{
-  color: #fff;
+  color:blue;
   cursor: pointer;
+  padding: 10px;
 }
 .accept-btn{
   background-color: green;

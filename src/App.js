@@ -2,93 +2,110 @@
 import './App.css';
 import React, { useState } from 'react';
 function App() {
-const [acceptCount, setAcceptCount] = useState(0)
-  const studentsData = [
+const [addCount, setAddCount] = useState(0)
+  const productsData = [
     {
-      name:"Selvam",
-      batch:"B47WD",
-      education:"B.E",
+      name : "Fancy Product",
+      price : "$40.00 - $80.00",
     },
     {
-      name:"Sanjay",
-      batch:"B45WD",
-      education:"B.E",
+      name : "Special Item",
+      price : "$20.00 $18.00",
     },
     {
-      name:"Baskar",
-      batch:"B43WD",
-      education:"BCA",
+      name : "Sale Item",
+      price : "$50.00 $25.00",
     },
     {
-      name:"Naveen",
-      batch:"B42WD",
-      education:"BSC",
+      name : "Popular Item",
+      price : "$40.00",
+    },
+    {
+      name : "Sale Item",
+      price : "$50.00 $25.00",
+    },
+    {
+      name : "Fancy Product",
+      price : "$120.00 - $280.00",
+    },
+    {
+      name : "Special Item",
+      price : "$20.00 $18.00",
+    },
+    {
+      name : "Popular Item",
+      price : "$40.00",
     },
   ]
   return (
 <div className="App">
-<div>
-  <h1>Accepted Students : {acceptCount}</h1>
-</div>
-<div className='card-block'>
-  {studentsData.map((stud,idx)=>(
-     <StudentCard
-     key={idx}
-     name={stud.name}
-     batch={stud.batch}
-     education={stud.education}
-     acceptCount={acceptCount}
-     setAcceptCount={setAcceptCount}
-     />
-  ))}
-</div>
+  
+  <div className='cart'>
+      <div className='Cart'> 
+          Cart : {addCount}
+      </div>
+  </div>
+  <div className='Shop'>
+     <p>
+       <span className='SS'>Shop In Style</span><br></br>
+       <span className='ss'>With this shop hompeage template</span>
+     </p> 
+  </div>
+  <div className='card-block'>
+    {productsData.map((prod,idx)=>(
+      <ProductCard
+       key={idx}
+       name={prod.name}
+       price={prod.price}
+       addCount={addCount}
+       setAddCount={setAddCount}
+      />
+     ))
+    }
+  </div>
+  <div className='copy'>
+         <h3> Copyright © Your Website 2023 </h3>
+  </div>
 </div>
   );
 }
-// const props={} => 
-// props= {
-//   name:"",
-//    batch:"", 
-//    education:""}
-//destructuring 
-// const {name, batch, education} = props
+
 
 export default App;
 
-function StudentCard({name, batch, education, acceptCount, setAcceptCount}){
+function ProductCard({name, price, addCount, setAddCount}){
   const [show, setShow] = useState(true)
 
-  function handleAccept(){
+  function handleAdd(){
     setShow(!show)
-    setAcceptCount(acceptCount+1)
+    setAddCount(addCount+1)
   }
 
-  function handleReject(){
+  function handleRemove(){
     setShow(!show)
-    setAcceptCount(acceptCount-1)
+    setAddCount(addCount-1)
     
   }
   return (
+   
     <div className='student-card'>
-      <img 
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50haIo6IibH--JO8V4wJT_FGTLu3zECwg5EK_VQoT&s"
-       alt="name"/>
+      <img id='image' src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="name"/>
       <h3>{name}</h3>
-      <p>{batch}</p>
-      <p>{education}</p>
+      <p>{price}</p>
 
     {
     show ?   <button 
-      className='accept-btn btn'
-      onClick={handleAccept}
-      >Accept</button> 
+      className='add-btn btn'
+      onClick={handleAdd}
+      >Add to cart</button> 
       :    
       <button 
-      className='reject-btn btn'
-      onClick={handleReject}
-      >Reject</button>
+      className='remove-btn btn'
+      onClick={handleRemove}
+      >Remove from Cart</button>
     }
-      
+    
+    
 
     </div>
   )
