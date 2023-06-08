@@ -1,138 +1,79 @@
 
 import './App.css';
 import React, { useState } from 'react';
+import StudentCard from './components/student';
+import { StateFulCom, StatelessComp } from './components/StateComponent';
+import Button from './components/Button';
+
 function App() {
-const [addCount, setAddCount] = useState(0)
-  const productsData = [
+
+  const [acceptCount, setAcceptCount] = useState(0)
+  const studentsData = [
     {
-      name : "Fancy Product",
-      price : "$40.00 - $80.00",
+      name:"Selvam",
+      batch:"B47WD",
+      education:"B.E",
     },
     {
-      name : "Special Item",
-      price : "$20.00 $18.00",
+      name:"Sanjay",
+      batch:"B45WD",
+      education:"B.E",
     },
     {
-      name : "Sale Item",
-      price : "$50.00 $25.00",
+      name:"Baskar",
+      batch:"B43WD",
+      education:"BCA",
     },
     {
-      name : "Popular Item",
-      price : "$40.00",
-    },
-    {
-      name : "Sale Item",
-      price : "$50.00 $25.00",
-    },
-    {
-      name : "Fancy Product",
-      price : "$120.00 - $280.00",
-    },
-    {
-      name : "Special Item",
-      price : "$20.00 $18.00",
-    },
-    {
-      name : "Popular Item",
-      price : "$40.00",
+      name:"Naveen",
+      batch:"B42WD",
+      education:"BSC",
     },
   ]
   return (
 <div className="App">
-  
-  <div className='cart'>
-      <div className='Cart'> 
-          Cart : {addCount}
-      </div>
+<div>
+  <h1>Accepted Students : {acceptCount}</h1>
+</div>
+<div className='card-block'>
+  {studentsData.map((stud,idx)=>(
+     <StudentCard
+     key={idx}
+     name={stud.name}
+     batch={stud.batch}
+     education={stud.education}
+     acceptCount={acceptCount}
+     setAcceptCount={setAcceptCount}
+     />
+  ))}
+  <div>
+    {/* <StateFulCom/>
+    <StatelessComp name={"Sanjay"}/> */}
+
+    <Button
+    background={"crimson"}
+    color="white"
+    pd="15px"
+    m="5px"
+    wd="max-content"
+    onClickFunc={()=>console.log("custom-btn clicked")}> Add </Button>
+
   </div>
-  <div className='Shop'>
-     <p>
-       <span className='SS'>Shop In Style</span><br></br>
-       <span className='ss'>With this shop hompeage template</span>
-     </p> 
-  </div>
-  <div className='card-block'>
-    {productsData.map((prod,idx)=>(
-      <ProductCard
-       key={idx}
-       name={prod.name}
-       price={prod.price}
-       addCount={addCount}
-       setAddCount={setAddCount}
-      />
-     ))
-    }
-  </div>
-  <div className='copy'>
-         <h3> Copyright © Your Website 2023 </h3>
-  </div>
+</div>
 </div>
   );
 }
-
+// const props={} => 
+// props= {
+//   name:"",
+//    batch:"", 
+//    education:""}
+//destructuring 
+// const {name, batch, education} = props
 
 export default App;
 
-function ProductCard({name, price, addCount, setAddCount}){
-  const [show, setShow] = useState(true)
-
-  function handleAdd(){
-    setShow(!show)
-    setAddCount(addCount+1)
-  }
-
-  function handleRemove(){
-    setShow(!show)
-    setAddCount(addCount-1)
-    
-  }
-  return (
-   
-    <div className='student-card'>
-      <img id='image' src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="name"/>
-      <h3>{name}</h3>
-      <p>{price}</p>
-
-    {
-    show ?   <button 
-      className='add-btn btn'
-      onClick={handleAdd}
-      >Add to cart</button> 
-      :    
-      <button 
-      className='remove-btn btn'
-      onClick={handleRemove}
-      >Remove from Cart</button>
-    }
-    
-    
-
-    </div>
-  )
-}
 
 
 
 
-// function Welcome(){
-//   const welcomename = "guvi"
-//   return(
-//     React.createElement("div", {id:"welcome"}, 
-//     React.createElement("h1", {}, `Hi how are you ${welcomename}`))
-//   )
-// }
-//jsx -> javascript xml = (html with js)
-
-// functional component
-// function Greeting(){
-//   //normal js
-//   //function
-//   //varible
-//   const name = "sanjay"
-
-//   return (
-//     <div id="greeting" className='greeting-class'>
-//       <h1>Hi how are you {name}</h1>
-//     </div>
-//   )
-// }
