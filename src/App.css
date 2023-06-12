@@ -1,38 +1,20 @@
 .App {
   text-align: center;
 }
-.student-card{
-  border: 1px solid black;
-  width : 250px;
-  margin: 5px;
-  border-radius: 10px;
+.tool-bar{
+  margin : 15px;
 }
-
-.card-block{
+.side-bar-styles{
+  height: inherit;
   display: flex;
-  flex-direction: row;
-  justify-content: center; 
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap:0.5rem;
-  margin: 12px;
 }
-
-.btn {
-  padding : 7px;
-  margin : 5px;
-  border:none;
-  border-radius: 10px;
-  font-size: larger;
-}
-.btn:hover{
-  color: #fff;
-  cursor: pointer;
-}
-.accept-btn{
-  background-color: green;
-}
-
-.reject-btn{
-  background-color: crimson;
+.actions{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: stretch;
+  gap:7rem;
 }
