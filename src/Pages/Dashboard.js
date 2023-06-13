@@ -6,28 +6,24 @@ export default function Dashboard({data, setData})
 {
     const [state, setState] = useState(false)
     const [another, setAnother]= useState(false)
-    function checkState(){
+    
+    function checkState()
+    {
         setState(!state)
         console.log("updation happened")
     }
 
-    function checkAnother(){
+    function checkAnother()
+    {
         setAnother(!another)
         console.log("updation another happened")
     }
 
-    useEffect(()=>{
-        console.log("I'm mounted")
-        // data fetch
-        // 15ms
-    }, [another])
+    useEffect(()=>{console.log("I'm mounted")}, [another])
 
     return (
         <Base>
-            <StudentCard
-            data={data}
-            setData={setData}
-            />
+            <div> Dashboard </div>
         </Base>
     )
 }

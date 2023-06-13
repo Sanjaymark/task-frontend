@@ -5,21 +5,21 @@ export default function SideBar(){
                 <div>
                     <ul className="actions">
                         <li className="rounded-full p-2 hover:bg-sky-700">
-                            <button>Dashboard</button>
+                            <button>  Dashboard  </button>
                         </li>
                         <li className="rounded-full p-2 hover:bg-sky-700">
-                            <button >Profile</button>
+                            <button>  Profile  </button>
                         </li>
                         <li className="rounded-full p-2 hover:bg-sky-700">
-                            <button>Student list</button>
+                            <button>  Student list  </button>
                         </li>
                         <li className="rounded-full p-2 hover:bg-sky-700">
-                            <button>Interview notes</button>
+                            <button>  Interview notes  </button>
                         </li>
                     </ul>
                 </div>        
                 <div className="logout-btn rounded-full hover:bg-sky-700 p-2" >
-                    <button>logout</button>
+                    <button> logout </button>
                 </div>
             </div>
     )
