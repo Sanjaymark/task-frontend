@@ -1,29 +1,19 @@
 import { useEffect, useState } from "react";
 import Base from "../BasePage/Base";
 import StudentCard from "../Components/StudentCard";
+import { useNavigate } from "react-router-dom";
 
-export default function Dashboard({data, setData})
-{
-    const [state, setState] = useState(false)
-    const [another, setAnother]= useState(false)
-    
-    function checkState()
-    {
-        setState(!state)
-        console.log("updation happened")
-    }
-
-    function checkAnother()
-    {
-        setAnother(!another)
-        console.log("updation another happened")
-    }
-
-    useEffect(()=>{console.log("I'm mounted")}, [another])
-
+export default function Dashboard({student}){
+    const navigate = useNavigate()
     return (
         <Base>
-            <div> Dashboard </div>
+        <h1 className="">Welcome to Student App</h1>
+
+        <button 
+        className="rounded-full bg-base-200 p-3 m-5"
+        onClick={()=>navigate("/student/add")}
+        >
+            Add More Students</button>
         </Base>
     )
 }
