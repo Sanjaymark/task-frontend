@@ -19,13 +19,29 @@
   gap:7rem;
 }
 
-.card-body
+.userbutton
 {
   color: black;
 }
 
-.card-title
+.card-body
 {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  text-decoration: underline;
+  color: black;
+  background-color:aqua;
 }
+
+.inp
+{
+  color: black;
+}
+
+.ip
+{
+  color: black;
+}
+
+.bn 
+{
+  color: black;
+}
+

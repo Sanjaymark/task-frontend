@@ -7,6 +7,8 @@ import StudentList from './Components/StudentList';
 import { Routes, Route } from 'react-router-dom';
 import AddStudents from './Components/AddStudents';
 import EditStudent from './Components/EditStudent';
+import ProfileList from './Components/ProfileList';
+import EditProfile from './Components/EditProfile';
 
 
 
@@ -55,12 +57,22 @@ const [crumState, setCrumState] = useState(pages)
     setData ={setData}
   />}
   />
+
     <Route
   path="/edit/:id" element={<EditStudent
     studentData={data}
     setData ={setData}
     crumState ={crumState}
-                setCrumState ={setCrumState}
+    setCrumState ={setCrumState}
+  />}
+  />
+
+  <Route
+  path="/edit/:id" element={<EditProfile
+    studentData={data}
+    setData ={setData}
+    crumState ={crumState}
+    setCrumState ={setCrumState}
   />}
   />
 
@@ -72,6 +84,13 @@ const [crumState, setCrumState] = useState(pages)
     setData ={setData}
     />}/>
 
+  <Route path="/profile/all" element={
+    <ProfileList
+    crumState ={crumState}
+    setCrumState ={setCrumState}
+    studentData={data}
+    setData ={setData}
+    />}/>
 </Routes>
 
 

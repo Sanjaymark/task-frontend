@@ -3,7 +3,7 @@ import Base from "../BasePage/Base";
 import { useNavigate, useParams } from "react-router-dom";
 import CrumBar from "./CrumBar";
 
-export default function EditStudent({ studentData, setData, crumState, setCrumState }) {
+export default function EditProfile({ studentData, setData, crumState, setCrumState }) {
 
     const navigate = useNavigate()
 
@@ -12,9 +12,9 @@ export default function EditStudent({ studentData, setData, crumState, setCrumSt
     const [idx, setIdx] = useState("");
     const [name, setName] = useState("");
     const [batch, setBatch] = useState("");
+    const [qualification, setQualification] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [qualification, setQualification] = useState("");
 
     useEffect(() => {
         console.log("id : ", id)
@@ -52,7 +52,7 @@ export default function EditStudent({ studentData, setData, crumState, setCrumSt
          crumState ={crumState}
          setCrumState ={setCrumState}
         />
-            <div className="p-5 ediv "> Please Fill the form to add Edit Student</div>
+            <div className="p-5 ediv ">Please Fill the form to add Edit Student</div>
             <div className="form-control">
                 <label className="input-group input-group-md inp m-2">
                     <span>ID </span>

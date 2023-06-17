@@ -7,13 +7,13 @@ export default function Dashboard({student}){
     const navigate = useNavigate()
     return (
         <Base>
-        <h1 className="">Welcome to Student App</h1>
+        <h1 className="">Users Dashboard</h1>
 
         <button 
-        className="rounded-full bg-base-200 p-3 m-5"
+        className="rounded-full bg-accent userbutton p-3 m-5"
         onClick={()=>navigate("/student/add")}
         >
-            Add More Students</button>
+            Create User</button>
         </Base>
     )
 }
