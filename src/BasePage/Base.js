@@ -10,11 +10,11 @@ export default function Base({children}){
   
             <div className="grid flex-grow card w-4/5 h-screen ">
                 <div className="flex flex-col w-full border-opacity-50">
-                    <div className="grid  h-16 bg-pink-300  ">
+                    <div className="grid  h-16 bg-base-300 ">
                         <TopBar/>
                     </div>
                     
-                    <div className="grid h-5/6 bg-base-300 bg-sky-400  h-full">
+                    <div className="grid h-5/6 bg-base-300 h-full">
                         {children} 
                     </div>
                     <br></br>

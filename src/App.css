@@ -24,3 +24,18 @@
   margin-top: 11px;
   padding: 10px;
 }
+
+.ddiv
+{
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  padding-bottom: 40px;
+}
+
+.projectsdiv
+{
+  background-color: white;
+  text-align: start;
+  content:initial;
+}
