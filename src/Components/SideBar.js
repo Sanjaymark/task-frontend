@@ -4,7 +4,7 @@ export default function SideBar()
 {
     const navigate = useNavigate()
     return(
-    
+        
            <div className="side-bar-styles p-7">
             <div className=" p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 m-1 btn">
               <button onClick={()=>navigate("/")}>Dashboard</button>

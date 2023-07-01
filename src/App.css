@@ -39,3 +39,27 @@
   text-align: start;
   content:initial;
 }
+
+.imageI
+{
+  height: 150px;
+}
+
+.scard{
+  height: 50px;
+  width: 180px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.colorsdiv
+{
+  width: 400px;
+}
+
+.sidebar
+{
+  height: 800px;
+  background-color: cornflowerblue;
+}

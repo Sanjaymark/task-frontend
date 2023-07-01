@@ -4,7 +4,7 @@ import TopBar from "../Components/TopBar";
 export default function Base({children}){
     return (
         <div className="flex w-full">
-            <div className="grid flex-grow  bg-green-400 w-1/5 h-screen place-items-center">
+            <div className="sidebar flex-grow w-1/5 h-screen place-items-center">
                 <SideBar/>
             </div>
   
@@ -18,7 +18,7 @@ export default function Base({children}){
                         {children} 
                     </div>
                     <br></br>
-                    copyright@Sanjay
+                    <p className="text-xl">Copyright@Sanjay</p>
                 </div>
             </div>
         </div>
