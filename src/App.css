@@ -4,6 +4,11 @@
 .tool-bar{
   margin : 15px;
 }
+
+.sbar{
+  background-color:darkcyan;
+  border: 2px solid black;
+}
 .side-bar-styles{
   height: inherit;
   display: flex;
@@ -61,5 +66,10 @@
 .sidebar
 {
   height: 800px;
-  background-color: cornflowerblue;
+  background-color:darkcyan;
+}
+
+.pp
+{
+  text-align: start;
 }
