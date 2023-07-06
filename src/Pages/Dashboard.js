@@ -9,27 +9,27 @@ export default function Dashboard(){
                                 <div class="grid grid-flow-col justify-stretch space-x-4 ">
                                     <div className="border-4 border-indigo-200 border-l-indigo-500 " >
                                         <div className="ddiv">
-                                            Monthly Earnings
-                                            <h1>$ 40000</h1>
+                                            <p className="me">Earnings (Monthly)</p>
+                                            <p className="text-2xl font-mono">$ 40000</p>
                                         </div> 
                                     </div>
                                     <div className="border-4 border-green-200 border-l-green-500 ">
                                         <div className="ddiv">
-                                            Annual Earnings
-                                            <h1>$ 40000</h1>
+                                            <p className="ae">Earnings (Annual)</p>
+                                            <p className="text-2xl font-mono">$ 215000</p>
                                         </div> 
                                     </div>
                                     <div className="border-4 border-yellow-200 border-l-yellow-500 ">
                                         <div className="ddiv">
-                                            Tasks
-                                            <br></br>
+                                            <p className="text-lg task">Tasks</p>
+                                            
                                             <input type="range" min={0} max="100" value="40" className="range range-xs" /> 
                                         </div>
                                     </div>
                                     <div className="border-4 border-red-200 border-l-red-500 ">
                                         <div className="ddiv">
-                                            Pending Requests
-                                            <h1>18</h1>
+                                            <p className="pr">Pending Requests</p>
+                                            <p className="text-2xl font-mono">18</p>
                                         </div>
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@ export default function Dashboard(){
                                         <div className="flex flex-col w-full border-opacity-50">
                                             <div className="grid h-1/2">
                                                 <div className="projectsdiv m-5">
-                                                    <div>Projects</div>
+                                                    <div className="pid">Projects</div>
                                                     <br></br>
                                                     <div>
                                                         <ul>
@@ -99,7 +99,7 @@ export default function Dashboard(){
                                     <div className="grid h-20 flex-grow bg-base-300 h-full">
                                         <div className="flex flex-col w-full border-opacity-50">
                                             <div className="grid h-1/2 bg-base-100 m-5">
-                                                Illustrations
+                                                <div className="pid">Illustrations</div>
                                                 <img className="imageI w-full" src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_posting_photo.svg"></img>
                                                 <p>
                                                     Add some quality, svg illustrations to your project courtesy of unDraw,<br></br>
@@ -108,7 +108,7 @@ export default function Dashboard(){
                                                  </p>
                                             </div>
                                             <div className="grid h-1/2 m-5 bg-base-100">
-                                                <h2>Development Approach</h2>
+                                                <div className="pid">Development Approach</div>
                                                 <p>
                                                 SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to<br></br> 
                                                 reduce CSS bloat and poor page performance. Custom CSS classes are used to <br></br>

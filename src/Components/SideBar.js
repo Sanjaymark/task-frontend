@@ -10,14 +10,14 @@ export default function SideBar()
               <button onClick={()=>navigate("/")}>Dashboard</button>
             </div>
             <details className="dropdown mb-12">
-              <summary className="m-1 btn">Components</summary>
-                <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+              <summary className="m-1 btn bg-base-100">Components</summary>
+                <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 ">
                   <li><button onClick={()=>navigate("/buttons")} >  Buttons  </button></li>
                   <li><button onClick={()=>navigate("/cards")} >  Cards  </button></li>
                 </ul>
             </details>
             <details className="dropdown  mb-24">
-              <summary className="m-1 btn">Utilities</summary>
+              <summary className="m-1 btn bg-base-100">Utilities</summary>
                 <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
                   <li><button onClick={()=>navigate("/colors")}>  Colors  </button></li>
                   <li><button onClick={()=>navigate("/borders")}>  Borders  </button></li>
@@ -26,7 +26,7 @@ export default function SideBar()
                 </ul>
             </details>
             <details className="dropdown dropdown-top mb-12">
-              <summary className="m-1 btn">Pages</summary>
+              <summary className="m-1 btn bg-base-100">Pages</summary>
                 <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
                   <li><button onClick={()=>navigate("/login")}>  Register / Login  </button></li>
                   <li><button onClick={()=>navigate("/forgot")}>  Forgot Password  </button></li>
