@@ -134,3 +134,31 @@
 {
   text-align: start;
 }
+
+.dark
+{
+  color: white;
+}
+
+.ss
+{
+  color:gray;
+}
+
+.heading
+{
+  color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color:darkcyan;
+  height: 50px;
+  padding-top: 8px;
+  margin-bottom: 15px;
+}
+
+.parad
+{
+  text-align: start;
+  font-family: 'Times New Roman', Times, serif;
+  color: gray;
+}
+

@@ -68,7 +68,7 @@ export default function Dashboard(){
                                             <div className=" h-1/2 w-full ">
                                                 <div className="flex flex-wrap colorsdiv">
                                                     <div className="scard text-xl font-mono bg-primary">
-                                                        <h1>Primary</h1>
+                                                        <h1 className="dark">Primary</h1>
                                                     </div>
                                                     <div className="scard text-xl font-mono bg-success">
                                                         <h1>success</h1>
@@ -77,10 +77,10 @@ export default function Dashboard(){
                                                         <h1>Info</h1>
                                                     </div>
                                                     <div className="scard text-xl font-mono bg-warning">
-                                                        <h1>Warning</h1>
+                                                        <h1 className="dark">Warning</h1>
                                                     </div>
                                                     <div className="scard text-xl font-mono bg-red-600">
-                                                        <h1>Danger</h1>
+                                                        <h1 className="dark">Danger</h1>
                                                     </div>
                                                     <div className="scard text-xl font-mono bg-secondary">
                                                         <h1>secondary</h1>
@@ -89,7 +89,7 @@ export default function Dashboard(){
                                                         <h1>Light</h1>
                                                     </div>
                                                     <div className="scard text-xl font-mono bg-neutral">
-                                                        <h1>Dark</h1>
+                                                        <h1 className="dark">Dark</h1>
                                                     </div>
 
                                                 </div>
