@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import Base from "../BasePage/Base";
-import { useNavigate } from "react-router-dom";
 
 export default function Animations()
 {
@@ -9,7 +7,7 @@ export default function Animations()
             <div className="flex flex-col w-full">
                 <div className="grid h-32 bg-base-300 ">
                     <div className="text-4xl flex p-3">Animation Utilities</div>
-                    <div className="flex prr p-3">
+                    <div className="flex prr p-3 bg-base-100">
                         Bootstrap's default utility classes can be found on the official Bootstrap Documentation page. 
                         The custom utilities below were created to extend this theme past the <br></br>
                         default utility classes built into Bootstrap's framework.
@@ -28,8 +26,8 @@ export default function Animations()
                                     <div className="dropdown dropdown-bottom border-2">
                                         <label tabIndex={0} className="btn m-1">Dropdown</label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                            <li><a>Action</a></li>
-                                            <li><a>Another Action</a></li>
+                                            <li><button>Action</button></li>
+                                            <li><button>Another Action</button></li>
                                         </ul>
                                     </div>
                                     <div className="flex prr p-2">
@@ -52,15 +50,15 @@ export default function Animations()
                                     <div className="dropdown dropdown-bottom border-2">
                                         <label tabIndex={0} className="btn m-1">Dropdown</label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                            <li><a>Action</a></li>
-                                            <li><a>Another Action</a></li>
+                                            <li><button>Action</button></li>
+                                            <li><button>Another Action</button></li>
                                         </ul>
                                     </div>
                                     <div className="dropdown dropdown-bottom flex">
                                         <label tabIndex={0} className="btn m-1 bg-accent">Dropdown</label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                            <li><a>Action</a></li>
-                                            <li><a>Another Action</a></li>
+                                            <li><button>Action</button></li>
+                                            <li><button>Another Action</button></li>
                                         </ul>
                                     </div>
 

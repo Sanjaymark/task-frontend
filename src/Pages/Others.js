@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import Base from "../BasePage/Base";
-import { useNavigate } from "react-router-dom";
+
 
 export default function Others()
 {
@@ -44,8 +43,8 @@ export default function Others()
                                     <div className="dropdown dropdown-bottom bg-accent border-2">
                                         <label tabIndex={0} className="btn m-1">Dropdown</label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                            <li><a>Action</a></li>
-                                            <li><a>Another Action</a></li>
+                                            <li><button>Action</button></li>
+                                            <li><button>Another Action</button></li>
                                         </ul>
                                     </div>
                                     <div>

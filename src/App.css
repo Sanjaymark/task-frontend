@@ -32,6 +32,11 @@
 {
   margin-top: 11px;
   padding: 10px;
+  height: 70px;
+  background-color: white;
+  margin-left: 10px;
+  width: 550px;
+  font-size: large;
 }
 
 .ddiv
@@ -129,6 +134,16 @@
   margin: 5px;
   padding-top: 20px;
 }
+.g-btn
+{
+  background-color:crimson;
+  color:white
+}
+
+.btn-div
+{
+  height:700px
+}
 
 .pp
 {
@@ -184,3 +199,11 @@
 {
   height: 500px;
 }
+
+.bp
+{
+  text-align: start;
+  background-color: white;
+  height: 60px;
+}
+

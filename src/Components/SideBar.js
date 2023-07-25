@@ -28,8 +28,8 @@ export default function SideBar()
             <details className="dropdown dropdown-top mb-12">
               <summary className="m-1 btn bg-base-100">Pages</summary>
                 <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
-                  <li><button onClick={()=>navigate("/login")}>  Register / Login  </button></li>
-                  <li><button onClick={()=>navigate("/forgot")}>  Forgot Password  </button></li>
+                  <li> <a href="https://www.facebook.com/" target="_blank"> Register / Login  </a></li>
+                  <li><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0" target="_blank">  Forgot Password  </a></li>
                 </ul>
             </details>
         </div>
