@@ -1,209 +1,24 @@
 .App {
   text-align: center;
 }
-.tool-bar{
-  margin : 15px;
-}
-.bb
-{
-  margin-top: 10px;
-}
-.sbar{
-  border: 2px solid black;
-  padding-left: 20px;
-  background-color:gainsboro;
-}
-.side-bar-styles{
-  height: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.actions{
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  align-items: stretch;
-  gap:7rem;
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 20px;
 }
 
-.bidiv
+.err-msg
 {
-  margin-top: 11px;
-  padding: 10px;
-  height: 70px;
-  background-color: white;
-  margin-left: 10px;
-  width: 550px;
-  font-size: large;
+  display: grid;
+  place-items: center;
+  color: crimson;
 }
 
-.ddiv
+.success-msg
 {
-  background-color: white;
-  text-align: left;
-  padding: 10px;
-  padding-bottom: 40px;
+  display: grid;
+  place-items: center;
+  color:green;
 }
-
-.projectsdiv
-{
-  background-color: white;
-  text-align: start;
-  content:initial;
-}
-
-.imageI
-{
-  height: 150px;
-}
-.me
-{
-  color:dodgerblue
-}
-
-.ae
-{
-  color: green;
-}
-
-.task
-{
-  color: gold;
-}
-
-.pr
-{
-  color: orangered;
-}
-
-.pid
-{
- background-color:gainsboro;
- padding: 5px;
- font-size: x-large;
- color:blue;
- padding-bottom: 3px;
-}
-
-.d
-{
-  padding-top: 15px;
-  background-color:gainsboro;
-  font-size: large;
-  color:blue;
-}
-
-.scard{
-  height: 50px;
-  width: 180px;
-  margin: 10px;
-  text-align: center;
-  padding: 10px;
-}
-
-.colorsdiv
-{
-  width: 400px;
-}
-
-.sidebar
-{
-  height: 820px;
-  background-color:dodgerblue;
-}
-
-.cardm
-{
-  height: 500px;
-}
-
-.para
-{
-  text-align: start;
-  padding-left: 2px;
-  margin: 5px;
-  padding-top: 10px;
-}
-
-.para2
-{
-  text-align: start;
-  padding-left: 2px;
-  margin: 5px;
-  padding-top: 20px;
-}
-.g-btn
-{
-  background-color:crimson;
-  color:white
-}
-
-.btn-div
-{
-  height:700px
-}
-
-.pp
-{
-  text-align: start;
-}
-
-.dark
-{
-  color: white;
-}
-
-.ss
-{
-  color:gray;
-}
-
-.heading
-{
-  color:white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color:darkcyan;
-  height: 50px;
-  padding-top: 8px;
-  margin-bottom: 15px;
-}
-
-.parad
-{
-  text-align: start;
-  font-family: 'Times New Roman', Times, serif;
-  color: gray;
-}
-
-.GF
-{
-  background-color:silver;
-  height: 80px;
-  padding-top: 13px;
-  color:blue;
-  font-size:larger;
-}
-
-.prr{
-  text-align: start;
-}
-
-.hgh
-{
-  height: 500px
-}
-
-.hhh
-{
-  height: 500px;
-}
-
-.bp
-{
-  text-align: start;
-  background-color: white;
-  height: 60px;
-}
-

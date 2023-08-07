@@ -1,21 +1,22 @@
 import React, { useState } from "react";
-import { Navbar } from "../Components/Navbar";
+import {Navbar} from "../Components/Navbar"
 import { Button, TextField } from "@mui/material";
+import { handleSignup } from "../Services/auth";
 import { useNavigate } from "react-router-dom";
-import { handleLogin } from "../Services/auth";
 
-export const Login = () =>{
+export const Signup = () =>{
     const [name, SetName] = useState("");
     const [email, SetEmail] = useState("");
+    const [contact, SetContact] = useState("");
     const [password, SetPassword] = useState("");
     const [error, SetError] = useState("");
     const [successMsg, setSuccessMsg] = useState("");
     const Navigate = useNavigate();
 
-    const loginUser = async () =>{
-        const payload = {name,email,password};
+    const signupUser = async () =>{
+        const payload = {name,email,contact,password};
 
-        handleLogin(payload).then((data)=>
+        handleSignup(payload).then((data)=>
         {
             if(data.error)
             {
@@ -27,37 +28,40 @@ export const Login = () =>{
                 SetError("")
                 setSuccessMsg(data.message);
                 localStorage.setItem("token", data.token);
+                Navigate("/")
                 
             }
         })
     }
 
     return (
-        <div>
-            <Navbar/>
-            <LoginForm
+    <div>
+        <Navbar/>
+        <SignupForm
             name={name}
             SetName={SetName}
             email={email}
             SetEmail={SetEmail}
             password={password}
             SetPassword={SetPassword}
-            loginUser={loginUser}
+            contact={contact}
+            SetContact={SetContact}
+            signupUser={signupUser}
         />
         {error ? <div className="err-msg">{error}</div> : ""}
         {successMsg ? <div className="success-msg">{successMsg}</div> : ""}
-        </div>
-    )
+    </div>)
 };
 
-function LoginForm({name,SetName,email, SetEmail,password, SetPassword, loginUser})
+function SignupForm({name,SetName,email, SetEmail,contact, SetContact,password, SetPassword, signupUser})
 {
     return(
         <form className="forms">
             <TextField id="outlined-basic" label="Name" variant="outlined" value={name} onChange={(e)=>SetName(e.target.value)} />
             <TextField id="outlined-basic" label="Email" variant="outlined" value={email} onChange={(e)=>SetEmail(e.target.value)}/>
+            <TextField id="outlined-basic" label="Contact" variant="outlined" value={contact} onChange={(e)=>SetContact(e.target.value)}/>
             <TextField id="outlined-basic" label="Password" variant="outlined" value={password} onChange={(e)=>SetPassword(e.target.value)}/>
-            <Button variant="contained" onClick={()=> loginUser() }>Login</Button>
+            <Button variant="contained" onClick={()=> signupUser() }>SignUp</Button>
         </form>
     )
 }

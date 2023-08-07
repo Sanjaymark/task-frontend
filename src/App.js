@@ -1,50 +1,31 @@
-
+import {Route, Routes} from "react-router-dom";
 import './App.css';
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Buttons from './Pages/Buttons';
-import Cards from './Pages/Cards';
-import Borders from './Pages/Borders';
-import Animations from './Pages/Animations';
-import Others from './Pages/Others';
-import Login from './Pages/Login';
-import Forgot from './Pages/Forgot';
-import Dashboard from './Pages/Dashboard';
-import Colors from './Pages/Colors';
+import { Dashboard } from "./Pages/Dashboard";
+import { Blogs } from "./Pages/Blogs";
+import { AddBlogs } from "./Pages/AddBlogs";
+import { UserBlogs } from "./Pages/UserBlogs";
+import { EditBlogs } from "./Pages/EditBlogs";
+import { Login } from "./Pages/Login";
+import { Signup } from "./Pages/Signup";
 
 
 
 
-function App() {
 
-
-
+function App() 
+{
   return (
         
       <div className="App">
-
         <Routes>
-          <Route exact path="/" element={<Dashboard/>}/>
-
-          <Route path="/buttons" element={<Buttons/>}/>
-
-          <Route path="/cards" element={<Cards/>}/>
-
-          <Route path="/colors" element={<Colors/>}/>
-
-          <Route path="/borders" element={<Borders/>}/>
-
-          <Route path="/animations" element={<Animations/>}/>
-
-          <Route path="/others" element={<Others/>}/>
-
-          <Route path="/login" element={<Login/>}/>
-
-          <Route path="/forgot" element={<Forgot/>}/>
-
+          <Route exact path="/" element={<Dashboard/>} />
+          <Route exact path="/blogs" element={<Blogs/>} />
+          <Route exact path="/blog/user" element={<UserBlogs/>} />
+          <Route exact path="/add/blogs" element={<AddBlogs/>} />
+          <Route exact path="/user/blogs/edit" element={<EditBlogs/>} />
+          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/signup" element={<Signup/>} />
         </Routes>
-
-
       </div>
   ); 
 }
