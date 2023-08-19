@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import {Navbar} from "../Components/Navbar"
-import { Button, TextField } from "@mui/material";
+import {Navigationbar} from "../Components/Navbar";
 import { handleSignup } from "../Services/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -28,15 +27,23 @@ export const Signup = () =>{
                 SetError("")
                 setSuccessMsg(data.message);
                 localStorage.setItem("token", data.token);
-                Navigate("/")
+                
+                setTimeout(() => 
+                {
+                    Navigate("/");
+                }, 3000);
                 
             }
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent the default form submission behavior
+        signupUser();
+    };
     return (
     <div>
-        <Navbar/>
+        <Navigationbar/>
         <SignupForm
             name={name}
             SetName={SetName}
@@ -46,22 +53,52 @@ export const Signup = () =>{
             SetPassword={SetPassword}
             contact={contact}
             SetContact={SetContact}
-            signupUser={signupUser}
+            handleSubmit={handleSubmit} 
         />
         {error ? <div className="err-msg">{error}</div> : ""}
         {successMsg ? <div className="success-msg">{successMsg}</div> : ""}
     </div>)
 };
 
-function SignupForm({name,SetName,email, SetEmail,contact, SetContact,password, SetPassword, signupUser})
+function SignupForm({name,SetName,email, SetEmail,contact, SetContact,password, SetPassword, handleSubmit})
 {
     return(
-        <form className="forms">
-            <TextField id="outlined-basic" label="Name" variant="outlined" value={name} onChange={(e)=>SetName(e.target.value)} />
-            <TextField id="outlined-basic" label="Email" variant="outlined" value={email} onChange={(e)=>SetEmail(e.target.value)}/>
-            <TextField id="outlined-basic" label="Contact" variant="outlined" value={contact} onChange={(e)=>SetContact(e.target.value)}/>
-            <TextField id="outlined-basic" label="Password" variant="outlined" value={password} onChange={(e)=>SetPassword(e.target.value)}/>
-            <Button variant="contained" onClick={()=> signupUser() }>SignUp</Button>
-        </form>
+        <div>
+        <div className="flex justify-center items-center h-screen m-1 bg-neutral">
+    <form className="forms" onSubmit={handleSubmit}>
+        <input
+            type="text"
+            placeholder="Name"
+            className="input input-bordered input-success w-full"
+            value={name}
+            onChange={(e) => SetName(e.target.value)}
+        />
+        <input
+            type="text"
+            placeholder="Email"
+            className="input input-bordered input-success w-full"
+            value={email}
+            onChange={(e) => SetEmail(e.target.value)}
+        />
+        <input
+            type="number"
+            placeholder="Contact"
+            className="input input-bordered input-success w-full"
+            value={contact}
+            onChange={(e) => SetContact(e.target.value)}
+        />
+        <input
+            type="password"
+            placeholder="Password"
+            className="input input-bordered input-success w-full"
+            value={password}
+            onChange={(e) => SetPassword(e.target.value)}
+        />
+        <button className="btn btn-success w-full" type="submit">
+            Signup
+        </button>
+    </form>
+</div>
+</div>
     )
 }

@@ -22,3 +22,8 @@
   place-items: center;
   color:green;
 }
+
+.dark
+{
+  color: white;
+}
