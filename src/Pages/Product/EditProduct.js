@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {  updateProduct, getProductById } from "../../Services/product";
+import { Navigationbar } from "../../Components/Navbar";
 
 export const UpdateProduct = () => {
     const { id } = useParams();
@@ -55,6 +56,8 @@ export const UpdateProduct = () => {
 
     return (
         <div>
+            <Navigationbar/>
+        <div className="bg-neutral m-1">
             <h2>Update Product</h2>
             
             <form className="forms" onSubmit={handleSubmit}>
@@ -66,6 +69,7 @@ export const UpdateProduct = () => {
             </form>
             {errorMessage && <div className="error-message">{errorMessage}</div>}
             {successMessage && <div className="success-message">{successMessage}</div>}
+        </div>
         </div>
     );
 };
