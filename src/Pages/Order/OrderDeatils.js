@@ -10,6 +10,7 @@ export function OrderDetails() {
         // Fetch order details using the productId
         const fetchOrderDetails = async () => {
             const response = await placeOrder(productId); // Replace with your actual API call
+            console.log(response.order)
             if (response.success) {
                 setOrderDetails(response.order);
             } else {
@@ -31,7 +32,7 @@ export function OrderDetails() {
             <p>Status: {orderDetails.status}</p>
             <p>Product Name: {orderDetails.items[0].product.name}</p>
             <p>Quantity: {orderDetails.items[0].quantity}</p>
-            <p>Order Price: ${orderDetails.totalAmount}</p>
+            <p>Order Price: {orderDetails.totalAmount}</p>
         </div>
     );
 }

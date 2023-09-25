@@ -69,13 +69,7 @@ export function AllOrders() {
                                     </div>
                                 ))}
                             </td>
-                            <td style={{ border: '1px solid white', padding: '8px' }}>
-                                {order.items.map(item => (
-                                    <div key={item.product._id}>
-                                        <p>${item.Price}</p>
-                                    </div>
-                                ))}
-                            </td>
+                            <td style={{ border: '1px solid white', padding: '8px' }}>{order.totalAmount}</td>
                         </tr>
                     ))}
                 </tbody>
