@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createProduct } from "../../Services/product";
 import { useNavigate } from "react-router-dom";
-import { Navigationbar } from "../../Components/Navbar";
+import { Navigationbar2 } from "../../Components/Navbar";
 
 export const CreateProduct = () => {
     const [name, setName] = useState("");
@@ -40,7 +40,7 @@ export const CreateProduct = () => {
 
     return (
         <div>
-            <Navigationbar/>
+            <Navigationbar2/>
         <div className="bg-neutral m-1 h-screen flex justify-center items-center">
             <div>
                 <span className="text-4xl dark">Create Product</span>

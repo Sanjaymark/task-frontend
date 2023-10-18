@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { myCart } from '../../Services/cart';
 import { deleteCartItem } from '../../Services/cart';
 import { placeOrder } from '../../Services/order';
-import { Navigationbar } from '../../Components/Navbar';
+import { Navigationbar2 } from '../../Components/Navbar';
 
 export function MyCart() {
     const [cartData, setCartData] = useState(null);
@@ -57,7 +57,7 @@ export function MyCart() {
 
     return (
         <div>
-            <Navigationbar/>
+            <Navigationbar2/>
             <div className='bg-neutral m-1' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                 {cartData.items.map(item => (
                     <div key={item._id} style={{ flex: '0 0 calc(33.33% - 1rem)', margin: '0.5rem' }}>

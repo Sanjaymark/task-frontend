@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAllOrders } from '../../Services/order';
-import { Navigationbar } from '../../Components/Navbar';
+import { Navigationbar2 } from '../../Components/Navbar';
 
 export function AllOrders() {
     const [orders, setOrders] = useState([]);
@@ -36,7 +36,7 @@ export function AllOrders() {
     return (
         <div>
         <div>
-            <Navigationbar/>
+            <Navigationbar2/>
         </div>
         <div className='bg-neutral dark m-1'  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  height: '100vh' }}>
             <span className='text-4xl m-4'>Details of Orders</span>

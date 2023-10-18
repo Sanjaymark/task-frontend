@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getProductById, deleteProduct } from "../../Services/product";
 import { useNavigate, useParams } from "react-router-dom";
-import { Navigationbar } from "../../Components/Navbar";
+import {  Navigationbar2 } from "../../Components/Navbar";
 
 export const ProductDetails = () => {
     const [product, setProduct] = useState(null);
@@ -37,7 +37,7 @@ export const ProductDetails = () => {
 
     return (
         <div>
-            <Navigationbar/>
+            <Navigationbar2/>
         <div className="bg-neutral m-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
             {product ? (
                 <div className="card w-96 bg-success shadow-xl">

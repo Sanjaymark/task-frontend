@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addToCart } from "../../Services/cart";
 import { useNavigate, useParams } from "react-router-dom";
-import { Navigationbar } from "../../Components/Navbar";
+import {  Navigationbar2 } from "../../Components/Navbar";
 
 
 export const AddToCart = () => {
@@ -38,7 +38,7 @@ export const AddToCart = () => {
 
     return (
         <div>
-            <Navigationbar/>
+            <Navigationbar2/>
         <div className="flex justify-center items-center h-screen bg-neutral m-1">
     <div>
         <h2 className="text-center dark text-3xl">Add to Cart</h2>
