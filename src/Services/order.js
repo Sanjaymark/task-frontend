@@ -2,9 +2,9 @@ import { API } from "./api";
 
 
 //Place A Order
-export async function placeOrder(productId) {
+export async function placeOrder(cartId) {
     try {
-        const response = await fetch(`${API}/order/place-order/${productId}`, {
+        const response = await fetch(`${API}/order/place-order/${cartId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

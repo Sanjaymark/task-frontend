@@ -40,7 +40,7 @@ export const ProductDetails = () => {
             <Navigationbar2/>
         <div className="bg-neutral m-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
             {product ? (
-                <div className="card w-96 bg-success shadow-xl">
+                <div className="card w-96 bg-neutral border-2 border-success dark shadow-xl">
                     <figure className="px-10 pt-10">
                         <img src={product.imageURL} alt={product.name} className="rounded-xl" />
                     </figure>

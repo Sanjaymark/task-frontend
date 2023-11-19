@@ -20,7 +20,7 @@ export const AddToCart = () => {
             setErrorMessage("");
            
             setTimeout(() =>{
-                Navigate("/")
+                Navigate("/cart/user/my-cart")
             }, 3000)
 
         } else {
@@ -52,7 +52,7 @@ export const AddToCart = () => {
                 value={quantity}
                 onChange={(e) => setQuantity(parseInt(e.target.value))}
             />
-            <button className="btn btn-success w-full" type="submit">
+            <button className="btn btn-outline bg-neutral btn-info w-full" type="submit">
                 Add to Cart
             </button>
 

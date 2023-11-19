@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import {Navigationbar} from "../Components/Navbar";
 import { handleSignup } from "../Services/auth";
 import { useNavigate } from "react-router-dom";
 
 export const Signup = () =>{
     const [name, SetName] = useState("");
     const [email, SetEmail] = useState("");
-    const [contact, SetContact] = useState("");
     const [password, SetPassword] = useState("");
     const [error, SetError] = useState("");
     const [successMsg, setSuccessMsg] = useState("");
     const Navigate = useNavigate();
 
     const signupUser = async () =>{
-        const payload = {name,email,contact,password};
+        const payload = {name,email,password};
 
         handleSignup(payload).then((data)=>
         {
@@ -26,11 +24,11 @@ export const Signup = () =>{
             {
                 SetError("")
                 setSuccessMsg(data.message);
-                localStorage.setItem("token", data.token);
+                
                 
                 setTimeout(() => 
                 {
-                    Navigate("/");
+                    Navigate("/user/login");
                 }, 3000);
                 
             }
@@ -43,7 +41,6 @@ export const Signup = () =>{
     };
     return (
     <div>
-        <Navigationbar/>
         <SignupForm
             name={name}
             SetName={SetName}
@@ -51,8 +48,6 @@ export const Signup = () =>{
             SetEmail={SetEmail}
             password={password}
             SetPassword={SetPassword}
-            contact={contact}
-            SetContact={SetContact}
             handleSubmit={handleSubmit} 
         />
         {error ? <div className="err-msg">{error}</div> : ""}
@@ -60,7 +55,7 @@ export const Signup = () =>{
     </div>)
 };
 
-function SignupForm({name,SetName,email, SetEmail,contact, SetContact,password, SetPassword, handleSubmit})
+function SignupForm({name,SetName,email, SetEmail,password, SetPassword, handleSubmit})
 {
     return(
         <div>
@@ -81,20 +76,13 @@ function SignupForm({name,SetName,email, SetEmail,contact, SetContact,password, 
             onChange={(e) => SetEmail(e.target.value)}
         />
         <input
-            type="number"
-            placeholder="Contact"
-            className="input input-bordered input-success w-full"
-            value={contact}
-            onChange={(e) => SetContact(e.target.value)}
-        />
-        <input
             type="password"
             placeholder="Password"
             className="input input-bordered input-success w-full"
             value={password}
             onChange={(e) => SetPassword(e.target.value)}
         />
-        <button className="btn btn-success w-full" type="submit">
+        <button className="btn btn-outline btn-info w-full" type="submit">
             Signup
         </button>
     </form>

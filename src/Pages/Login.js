@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Navigationbar } from "../Components/Navbar";
 import { handleLogin } from "../Services/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -37,8 +36,7 @@ export const Login = () => {
     };
 
     return (
-        <div>
-            <Navigationbar />
+        <div className="h-screen">
             <LoginForm
                 name={name}
                 SetName={SetName}
@@ -47,16 +45,16 @@ export const Login = () => {
                 password={password}
                 SetPassword={SetPassword}
                 handleSubmit={handleSubmit} // Pass the handleSubmit function to the form
+                error={error}
+                successMsg={successMsg}
             />
-            {error && <div className="err-msg">{error}</div>}
-            {successMsg && <div className="success-msg">{successMsg}</div>}
         </div>
     );
 };
 
-function LoginForm({ name, SetName, email, SetEmail, password, SetPassword, handleSubmit }) {
+function LoginForm({ name, SetName, email, SetEmail, password, SetPassword, handleSubmit,error,successMsg }) {
     return (
-        <div className="flex justify-center items-center h-screen bg-neutral m-1">
+        <div className="flex justify-center items-center h-full bg-neutral m-1">
     <div className="w-full max-w-md">
         <form className="forms" onSubmit={handleSubmit}>
             <input
@@ -80,10 +78,12 @@ function LoginForm({ name, SetName, email, SetEmail, password, SetPassword, hand
                 value={password}
                 onChange={(e) => SetPassword(e.target.value)}
             />
-            <button className="btn btn-success w-full" type="submit">
+            <button className="btn-outline btn-info btn w-full" type="submit">
                 Login
             </button>
         </form>
+                {error && <div className="dark">{error}</div>}
+                {successMsg && <div className="dark">{successMsg}</div>}
     </div>
 </div>
     );

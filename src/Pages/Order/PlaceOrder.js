@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import { placeOrder } from '../../Services/order'; // Assuming you have the placeOrder function
 
 export function PlaceOrder() {
-    const { productId } = useParams();
+    const { cartId } = useParams();
     const [orderSuccess, setOrderSuccess] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [orderDetails, setOrderDetails] = useState(null);
 
     const handlePlaceOrder = async () => {
-        const response = await placeOrder(productId);
+        const response = await placeOrder(cartId);
 
         if (response.success) {
             setOrderSuccess(true);
@@ -21,8 +21,7 @@ export function PlaceOrder() {
 
     useEffect(() => {
         if (orderSuccess && orderDetails) {
-            // You can use the orderDetails state to fetch and display the order details
-            // For example: fetchOrderDetails(orderDetails._id);
+            
         }
     }, [orderSuccess, orderDetails]);
 
