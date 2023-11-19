@@ -60,44 +60,43 @@ export function MyCart() {
         return <div>Loading...</div>;
     }
 
-    if (!cartData) {
-        return <div>Cart not found</div>;
-    }
-
     return (
         <div>
             <Navigationbar2 />
-            <div className="bg-neutral h-screen items-center ">
-                <div className='bg-neutral  m-1' style={{ display: 'flex', flexWrap: 'wrap',  }}>
-                    {cartData.items.map(item => (
-                        <div key={item._id} >
-                            <div className="card bg-neutral border-2 border-info dark shadow-xl w-80 m-2">
-                                <figure className="h-1/3">
-                                    <img src={item.product.imageURL} alt={item.product.name} className="rounded-xl" />
-                                </figure>
-                                <div className="card-body items-center text-center">
-                                    <h2 className="card-title">{item.product.name}</h2>
-                                    <p>{/* Add your product description here */}</p>
-                                    <div className="card-actions">
-                                        <button className="btn btn-primary" onClick={() => handlePlaceOrder(item._id)}>
-                                            Buy Now
-                                        </button>
-                                        <button className="btn btn-secondary" onClick={() => handleDeleteFromCart(item._id)}>Delete</button>
+            <div className="bg-neutral min-h-screen flex items-center justify-center m-1">
+                {cartData && cartData.items.length > 0 ? (
+                    <div className='bg-neutral m-1' style={{ display: 'flex', flexWrap: 'wrap' }}>
+                        {cartData.items.map(item => (
+                            <div key={item._id} >
+                                <div className="card bg-neutral border-2 border-info dark shadow-xl w-80 m-2">
+                                    <figure className="h-1/3">
+                                        <img src={item.product.imageURL} alt={item.product.name} className="rounded-xl" />
+                                    </figure>
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">{item.product.name}</h2>
+                                        <p>{/* Add your product description here */}</p>
+                                        <div className="card-actions">
+                                            <button className="btn btn-primary" onClick={() => handlePlaceOrder(item._id)}>
+                                                Buy Now
+                                            </button>
+                                            <button className="btn btn-secondary" onClick={() => handleDeleteFromCart(item._id)}>Delete</button>
+                                        </div>
+                                        <p>Quantity: {item.quantity}</p>
+                                        <p>Price: Rs.{item.Price}/-</p>
                                     </div>
-                                    <p>Quantity: {item.quantity}</p>
-                                    <p>Price: Rs.{item.Price}/-</p>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-                <span className='text-4xl border-2 border-info h-12 dark'>Total cart Price: Rs.{cartData.totalPrice}/-</span>
-                <br></br>
-
+                        ))}
+                    </div>
+                ) : (
+                    <div className='dark'>No items in the cart  </div>
+                )}
+                {cartData && (
+                    <span className='text-2xl  h-10 dark'>Total cart Price: Rs.{cartData.totalPrice}/-</span>
+                )}
                 {successMessage && (
                     <div className="success-msg">{successMessage}</div>
                 )}
-
             </div>
         </div>
     );

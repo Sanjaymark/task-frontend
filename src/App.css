@@ -13,14 +13,14 @@
 {
   display: grid;
   place-items: center;
-  color: crimson;
+  color:coral
 }
 
 .success-msg
 {
   display: grid;
   place-items: center;
-  color:green;
+  color:aqua;
 }
 
 .dark
