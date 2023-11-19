@@ -29,7 +29,7 @@ export const Signup = () =>{
                 setTimeout(() => 
                 {
                     Navigate("/user/login");
-                }, 3000);
+                }, 5000);
                 
             }
         })
@@ -49,13 +49,13 @@ export const Signup = () =>{
             password={password}
             SetPassword={SetPassword}
             handleSubmit={handleSubmit} 
+            error={error}
+            successMsg={successMsg}
         />
-        {error ? <div className="err-msg">{error}</div> : ""}
-        {successMsg ? <div className="success-msg">{successMsg}</div> : ""}
     </div>)
 };
 
-function SignupForm({name,SetName,email, SetEmail,password, SetPassword, handleSubmit})
+function SignupForm({name,SetName,email, SetEmail,password, SetPassword, handleSubmit, error,successMsg })
 {
     return(
         <div>
@@ -86,6 +86,8 @@ function SignupForm({name,SetName,email, SetEmail,password, SetPassword, handleS
             Signup
         </button>
     </form>
+            {error && <div className="dark">{error}</div>}
+            {successMsg && <div className="dark">{successMsg}</div>}
 </div>
 </div>
     )
