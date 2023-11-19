@@ -8,8 +8,7 @@ export const Navigationbar = () =>{
     return (
       <div className="navbar bg-neutral text-neutral-content">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">Inventory</a>
-          <button className="btn btn-xs sm:btn-sm md:btn-md btn btn-outline btn-info mx-20" onClick={() => Navigate("/")}>Dashboard</button>
+          <button className="btn btn-xs sm:btn-sm md:btn-md btn btn-outline btn-info" onClick={() => Navigate("/")}>Dashboard</button>
         </div>
         <div className="flex-none gap-2">
         <button className="btn btn-outline btn-info m-2" onClick={() => Navigate("/order/my-orders")}>Orders</button>
@@ -33,8 +32,7 @@ export const Navigationbar2 = () =>{
   return (
     <div className="navbar bg-neutral text-neutral-content">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">Inventory</a>
-        <button className="btn btn-xs sm:btn-sm md:btn-md btn btn-outline btn-info mx-20" onClick={() => Navigate("/")}>Dashboard</button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md btn btn-outline btn-info" onClick={() => Navigate("/")}>Dashboard</button>
       </div>
       <div className="flex-none gap-2">
       <button className="btn btn-outline btn-info m-2" onClick={() => Navigate("/order/my-orders")}>Orders</button>

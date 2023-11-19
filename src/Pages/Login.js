@@ -82,8 +82,8 @@ function LoginForm({ name, SetName, email, SetEmail, password, SetPassword, hand
                 Login
             </button>
         </form>
-                {error && <div className="dark">{error}</div>}
-                {successMsg && <div className="dark">{successMsg}</div>}
+                {error && <div className="err-msg">{error}</div>}
+                {successMsg && <div className="success-msg">{successMsg}</div>}
     </div>
 </div>
     );
